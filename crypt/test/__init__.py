@@ -6,7 +6,7 @@ import unittest
 import crypt
 
 
-class TestConfig(unittest.TestCase):
+class TestSSL(unittest.TestCase):
     def setUp(self):
         self.__ssl_cert = crypt.SSL()
         self.__tmp_paths = []
