@@ -2,17 +2,7 @@ import datetime
 import os
 import sys
 
-try:
-    import OpenSSL
-except ImportError:
-    sys.stderr.write(
-        'The OpenSSL package is unavailable. SSL cert configuration is not possible.\n'
-        'Use `pip install PyOpenSSL` or similar command for your package manager of choice '
-        'to install the OpenSSL package.')
-    import OpenSSL
-
-
-class SSL(object):
+class SSLCertGenerator(object):
     @staticmethod
     def get_cert_valid_timespan(cert):
         fmt = '%Y%m%d%H%M%SZ'
