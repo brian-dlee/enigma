@@ -30,7 +30,7 @@ class TestSSL(unittest.TestCase):
         new_ssl_cert = crypt.SSL()
         new_ssl_cert.load(
             os.path.join(install_directory, 'cert.pem'),
-            os.path.join(install_directory, 'priv_key.pem'))
+            os.path.join(install_directory, 'privkey.pem'))
 
         return new_ssl_cert
 
@@ -126,7 +126,7 @@ class TestSSL(unittest.TestCase):
         self.__ssl_cert.install(os.getcwd())
 
         self.__tmp_paths.append(os.path.join(os.getcwd(), 'cert.pem'))
-        self.__tmp_paths.append(os.path.join(os.getcwd(), 'priv_key.pem'))
+        self.__tmp_paths.append(os.path.join(os.getcwd(), 'privkey.pem'))
 
         assert os.path.exists(self.__tmp_paths[0]) and os.path.exists(self.__tmp_paths[1])
 

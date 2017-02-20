@@ -42,7 +42,7 @@ class SSLCertGenerator(object):
 
         self.__sign()
 
-    def install(self, install_dir, cert_file='cert.pem', key_file='priv_key.pem'):
+    def install(self, install_dir, cert_file='cert.pem', key_file='privkey.pem'):
         if not os.path.exists(install_dir):
             os.makedirs(install_dir)
 
