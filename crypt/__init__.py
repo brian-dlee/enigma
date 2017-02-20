@@ -2,6 +2,8 @@ import datetime
 import os
 import sys
 
+import OpenSSL
+
 class SSLCertGenerator(object):
     @staticmethod
     def get_cert_valid_timespan(cert):
@@ -70,7 +72,7 @@ class SSLCertGenerator(object):
         if valid_for is not None:
             self.cert.gmtime_adj_notAfter(valid_for * 24 * 60 * 60)
         else:
-            self.cert.gmtime_adj_notAfter(SSL.get_cert_valid_timespan(self.cert))
+            self.cert.gmtime_adj_notAfter(SSLCertGenerator.get_cert_valid_timespan(self.cert))
 
         self.__sign()
 

@@ -8,7 +8,7 @@ import crypt
 
 class TestSSL(unittest.TestCase):
     def setUp(self):
-        self.__ssl_cert = crypt.SSL()
+        self.__ssl_cert = crypt.SSLCertGenerator()
         self.__tmp_paths = []
 
     def tearDown(self):
@@ -27,7 +27,7 @@ class TestSSL(unittest.TestCase):
         self.__ssl_cert.generate()
         self.__ssl_cert.install(install_directory)
 
-        new_ssl_cert = crypt.SSL()
+        new_ssl_cert = crypt.SSLCertGenerator()
         new_ssl_cert.load(
             os.path.join(install_directory, 'cert.pem'),
             os.path.join(install_directory, 'privkey.pem'))
@@ -45,7 +45,7 @@ class TestSSL(unittest.TestCase):
         return int((expire_date - start_date).total_seconds())
 
     def test_1_init(self):
-        assert isinstance(self.__ssl_cert, crypt.SSL)
+        assert isinstance(self.__ssl_cert, crypt.SSLCertGenerator)
 
     def test_2_set_subject_data_short(self):
         self.__ssl_cert.set_subject_data('C', 'US')
