@@ -8,8 +8,8 @@ setup(
     author='Brian Lee',
     author_email='briandl92391@gmail.com',
     license='MIT',
-    packages=['crypt'],
+    packages=['enigma'],
     install_requires=['PyOpenSSL'],
     zip_safe=True,
-    test_suite='crypt.test'
+    test_suite='enigma.test'
 )
